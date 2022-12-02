@@ -1,0 +1,30 @@
+.searchbar{
+    text-align: center;
+}
+.searchbar h1{
+    font-size:30px;
+    font-weight: 700;
+}
+
+
+table{
+    margin-top: 10px;
+    width: 100%
+}
+
+.row {
+    margin-bottom: 5px;
+}
+
+.DemoTest{
+    background-color: rgb(222, 207, 188);
+    padding: 5px;
+}
+
+
+.pageHeader h1{
+    font-size:30px;
+    font-weight: 700;
+    text-align: center;
+}
+

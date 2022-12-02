@@ -1,0 +1,31 @@
+<isscript>
+/**
+ * Shop System Plugins:
+ * - Terms of Use can be found under:
+ * https://github.com/wirecard/salesforce-ee/blob/master/_TERMS_OF_USE
+ * - License can be found under:
+ * https://github.com/wirecard/salesforce-ee/blob/master/LICENSE
+ */
+ importPackage(dw.system);
+</isscript>
+
+<isdecorate template="application/MenuFrame">
+    <iscontent type="text/html" charset="UTF-8"/>
+    <isif condition="${pdict.Message}">
+        <div class="row">
+            <div class="column">
+                <div class="<isif condition="${ pdict.isSuccess }">success<iselse/>error</isif>">
+                    ${ pdict.Message }
+                </div>
+            </div>
+        </div> <hr>
+    </isif>
+    <div class="pageHeader">        
+        <h1> ${Resource.msg('label.pricebook.page.heading', 'getDetails', null)} <h1>
+    </div>
+
+    <isinclude template="pricebook/heading"/>
+
+    <link rel="stylesheet" type="text/css" href="${ URLUtils.staticURL('/css/index.css') }"/>
+    <script type="text/javascript" src="${dw.web.URLUtils.staticURL('js/pricebook.js')}"></script>
+</isdecorate>

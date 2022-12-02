@@ -1,0 +1,66 @@
+<isscript>
+    importPackage(dw.system);
+</isscript>
+<isdecorate template="application/MenuFrame">
+    <iscontent type="text/html" charset="UTF-8" />
+    <isif condition="${pdict.isSuccess}">
+        <div class="row">
+            <div class="column">
+                <div class='<isif condition=" ${pdict.isSuccess}">
+                    success <iselse/>error</isif>'> ${pdict.Message}
+                </div>
+                <hr>
+            </div>
+        </div>
+            <br>
+    </isif>
+    <p class="message"></p>
+    <link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('/css/surveyForm.css')}" />
+    <div class="row">
+        <div class="column">
+            <h3>${Resource.msg('label.msg.inventory.management', 'getDetails', null)}</h3>
+            <div class="row">
+                <div class="column">
+                    
+                    <form data-action="${URLUtils.https('InventoryManager-GetFormData')}" class="inv_form">
+                            <div class="inventory-field">
+                                <div class=" inventory-subfield">
+                                    <label class="label-" for="emailSender">${Resource.msg('label.msg.inventory.id', 'getDetails', null)}</label>
+                                    <input type="text" placeholder="Enter valid Inventory ID" id="inventory_id"
+                                        class="inventory_id" name="inventory_id" required />
+                                </div>
+                                <div class="inventory-field">
+                                    <label class="label-" for="emailSender">${Resource.msg('label.msg.email.id', 'getDetails', null)}</label>
+                                    <input type="text" placeholder="Enter valid Email ID" id="email_Id"
+                                        class="email_Id" name="email_Id" required />
+                                </div>
+                            </div>
+                            <div class="ind_labels heading row">
+                                <div class="col">
+                                    <label for="replyTo">${Resource.msg('label.msg.product.id', 'getDetails', null)}</label>
+                                </div>
+                                <div class="col">
+                                    <label for="replyTo">${Resource.msg('label.msg.allocation', 'getDetails', null)}</label>
+                                </div>
+                                <div class="col">
+                                    <label for="replyTo">${Resource.msg('label.msg.perpetual', 'getDetails', null)}</label>
+                                </div>
+                            </div>
+                            <div class="add_item">
+                                <isinclude template="inventory/sub_form" />
+                            </div>
+                            <div class="submit_form">
+                                <input id="add_btn" class="button-add" type="button" onclick="addFields();"
+                                    value="${Resource.msg('label.btn.add', 'getDetails', null)}" />
+                                <input class="button-primary btn_submit" type="button" onclick="formsubmit();"
+                                    value="${Resource.msg('label.btn.sumbit', 'getDetails', null)}" />
+                            </div>
+                            <input type="hidden" name="productData" id="productData" value="" />
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="${dw.web.URLUtils.staticURL('js/inventory.js')}"></script>
+</isdecorate>

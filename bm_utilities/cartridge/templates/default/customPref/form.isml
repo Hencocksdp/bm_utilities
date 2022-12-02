@@ -1,0 +1,44 @@
+<isscript>
+    importPackage(dw.system);
+</isscript>
+
+<isdecorate template="application/MenuFrame">
+    <link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('/css/index.css')}" />
+    <div class="searchbar">
+        <h1> ${Resource.msg('label.preferences', 'getDetails', null)} </h1>
+        <input type="text" id="myInput" name="" value="" size="50" onkeyup="searchMenu();" />
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <td class="table_header n w e s">
+                    <isprint value="${dw.web.Resource.msg('custom_massage.configuration.CustomID', 'getDetails', null)}" />
+                </td>
+                <td class="table_header n w e s">
+                    <isprint value="${dw.web.Resource.msg('custom_massage.configuration.value', 'getDetails', null)}" />
+                </td>
+                <td class="table_header n w e s">
+                    <isprint value="${dw.web.Resource.msg('custom_massage.configuration.groupId', 'getDetails', null)}" />
+                </td>
+            </tr>
+        </thead>
+        <tbody id="bodyData">
+            <isloop items="${pdict.groupId}" var="group" status="">
+                <tr>
+                    <td class="table_detail w e s" nowrap="nowrap">
+                        <b><isprint value="${group.preferenceName}" encoding="on" /></b>
+                        (<isprint value="${group.preferenceId}" encoding="on" />)
+                    </td>
+                    <td class="table_detail w e s" nowrap="nowrap">
+                        <isprint value="${pdict.value.getCustom()[group.preferenceId]}" encoding="on" />
+                    </td>
+                    <td class="table_detail w e s" nowrap="nowrap">
+                        <isprint value="${group.gId}" encoding="on" />
+                    </td>
+                </tr>
+            </isloop>
+        </tbody>
+    </table>
+</isdecorate>
+<script type="text/javascript" src="${dw.web.URLUtils.staticURL('js/index.js')}"></script>

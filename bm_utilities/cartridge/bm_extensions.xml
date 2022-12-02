@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<extensions xmlns="http://www.demandware.com/xml/bmmodules/2007-12-11" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.demandware.com/xml/bmmodules/2007-12-11 bmext.xsd">
+    <menuitem id="customChanges" position="77489" site="true">
+        <name xml:lang="x-default">Custom utility</name>
+        <short_description xml:lang="x-default">
+            Created to provoide custom features.
+        </short_description>
+        <icon>icons/star_yellow_add.gif</icon>
+    </menuitem>
+    <menuaction id="customChanges_01" menupath="customChanges" position="30" site="true">
+        <name xml:lang="x-default">Update pricebook records</name>
+        <short_description xml:lang="x-default">Products price update in pricebook.</short_description>
+        <description xml:lang="x-default">
+            Products price update in pricebook.
+        </description>
+        <exec pipeline="PriceBookUpdate" node="Show"/>
+        <sub-pipelines>
+            <pipeline name="PriceBookUpdate-Show" />
+            <pipeline name="PriceBookUpdate-SupportFormPost" />
+        </sub-pipelines>
+        <parameters>
+            <parameter name="menuname" value="Contact support"/>
+            <parameter name="mainmenuname" value="PaymentGateway"/>
+        </parameters>
+        <icon>icons/star_yellow_new.gif</icon>
+    </menuaction>
+    
+    <menuaction id="customChanges_02" menupath="customChanges" position="30" site="true">
+        <name xml:lang="x-default">Search Custom preferences by Id  </name>
+        <short_description xml:lang="x-default">Search Custom preferences by Id</short_description>
+        <description xml:lang="x-default">
+            Search Custom preferences by  Id
+        </description>
+        <exec pipeline="Preference" node="Show"/>
+        <sub-pipelines>
+            <pipeline name="Preference-Show" />
+        </sub-pipelines>
+        <parameters>
+            <parameter name="menuname" value="Contact support"/>
+            <parameter name="mainmenuname" value="Preference"/>
+        </parameters>
+        <icon>icons/star_yellow_new.gif</icon>
+    </menuaction>
+
+    <menuaction id="customChanges_03" menupath="customChanges" position="30" site="true">
+        <name xml:lang="x-default">Inventory Update</name>
+        <short_description xml:lang="x-default">Update your Inventory</short_description>
+        <description xml:lang="x-default">
+            Inventory Update
+        </description>
+        <exec pipeline="InventoryManager" node="SupportForm"/>
+        <sub-pipelines>
+            <pipeline name="InventoryManager-SupportForm" />
+            <pipeline name="InventoryManager-GetFormData" />
+        </sub-pipelines>
+        <parameters>
+            <parameter name="menuname" value="Contact support"/>
+            <parameter name="mainmenuname" value="InventoryManager"/>
+        </parameters>
+        <icon>icons/star_yellow_new.gif</icon>
+    </menuaction>
+</extensions>

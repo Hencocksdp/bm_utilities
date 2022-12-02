@@ -1,0 +1,7 @@
+<isscript>
+var json = JSON.stringify(pdict.msg.message);
+</isscript>
+<script>
+
+window.msg = <isprint value="${json}" encoding="off"/>;
+</script>

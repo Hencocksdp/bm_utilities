@@ -1,0 +1,11 @@
+<div class="row container_form">
+    <div class="ind_labels col">
+        <input type="text" placeholder="Enter a valid Product Id" id="product_id" class="product_id" name="product_id" required />
+    </div>
+    <div class="ind_labels col">
+        <input type="text" placeholder="Enter a valid Quantity value" id="quantity" class="quantity" name="quantity" pattern= "[0-9]+" minlength="1" maxlength="9" required />
+    </div>
+    <div class="ind_labels perpetual col">
+        <input type="checkbox" id="isperpetual" class="isperpetual" name="isperpetual" value="isperpetual" />
+    </div>
+</div>

@@ -1,0 +1,2 @@
+Job-ID: ${pdict.Job_Id}
+Following Id's has been updated ${pdict.product_infos}
